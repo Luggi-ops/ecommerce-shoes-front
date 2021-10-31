@@ -3,6 +3,7 @@ import './Item.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart} from '@fortawesome/free-solid-svg-icons';
 import { faStar} from '@fortawesome/free-solid-svg-icons';
+import ItemCount from '../itemcount/ItemCount';
 
 const Item = ({data}) => {
     return (
@@ -24,6 +25,7 @@ const Item = ({data}) => {
                     <div>
                         <FontAwesomeIcon icon={faHeart} className="icon-fav"/>
                     </div>
+                    <ItemCount data={data}/>
                 </div>
             </div>
         </>

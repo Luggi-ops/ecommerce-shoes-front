@@ -1,0 +1,33 @@
+
+.itemCountContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemCount{
+    width: 70%;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemCount__icon{
+    cursor: pointer;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.itemCount__value{
+    color: var(--black);
+    font-weight: bold;
+}
+
