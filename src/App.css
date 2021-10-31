@@ -22,7 +22,7 @@ body{
   color: var(--black);
   font-family: var(--font-primary);
   font-size: 1.8rem;
-  background-image: var(--bg-deg);
+  background-color: var(--branding);
 }
 
 h1{

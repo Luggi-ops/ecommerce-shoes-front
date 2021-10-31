@@ -29,5 +29,10 @@
 .itemCount__value{
     color: var(--black);
     font-weight: bold;
+
+}
+
+.itemCount__value::selection{
+    background-color: transparent;
 }
 
