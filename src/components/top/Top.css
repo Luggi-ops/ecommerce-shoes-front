@@ -1,0 +1,52 @@
+
+.hero{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.hero h1{
+    font-size: 15rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--white);
+    mix-blend-mode: screen;
+    color: var(--black);
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 50vh;
+    z-index: -1;
+}
+
+.hero h1::selection{
+    background-color: var(--white);
+}
+
+.hero-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.hero-logo{
+    transform: translate(-50%);
+    position: absolute;
+    width: 30rem;
+    top: 40%;
+    left: 50%;
+}
+
+.hero-svg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
