@@ -22,10 +22,15 @@ body{
   color: var(--black);
   font-family: var(--font-primary);
   font-size: 1.8rem;
+  background-image: var(--bg-deg);
 }
 
 h1{
   font-size: 4rem;
+}
+
+img{
+  width: 100%;
 }
 
 /*utilities*/

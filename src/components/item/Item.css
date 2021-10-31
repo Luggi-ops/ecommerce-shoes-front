@@ -1,0 +1,37 @@
+
+
+.item-card{
+    width: 30rem;
+    background-color: var(--white);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.item-card-img img{
+    height: 20rem;
+    object-fit: cover;
+}
+
+.item-content{
+    padding: 2rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.icon-start{
+    color: #fecc00;
+}
+
+.icon-fav{
+    color: var(--white);
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
