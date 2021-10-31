@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart} from '@fortawesome/free-solid-svg-icons';
 import { faStar} from '@fortawesome/free-solid-svg-icons';
 import ItemCount from '../itemcount/ItemCount';
+import AddToCart from '../addtocart/AddToCart';
 
 const Item = ({data}) => {
     return (
@@ -26,6 +27,7 @@ const Item = ({data}) => {
                         <FontAwesomeIcon icon={faHeart} className="icon-fav"/>
                     </div>
                     <ItemCount data={data}/>
+                    <AddToCart />
                 </div>
             </div>
         </>
