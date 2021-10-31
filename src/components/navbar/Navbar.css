@@ -28,20 +28,4 @@
     margin-right: 5rem;
 }
 
-.cart{
-    display: flex;
-    justify-content: space-between;
-}
 
-.cart-icon{
-    background-color: var(--black);
-    border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
-    display: inline-block;
-    color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 2rem;
-}

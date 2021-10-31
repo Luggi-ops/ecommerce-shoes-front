@@ -1,9 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBag} from '@fortawesome/free-solid-svg-icons';
-import { faHeart} from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
+import CartWidget from '../cartwidget/CartWidget';
 
 const Navbar = () => {
     return (
@@ -18,15 +16,7 @@ const Navbar = () => {
                     <Link to="/reviews" className="nav-link">Reviews</Link>
                 </nav>
 
-                <div className="cart">
-                    <div className="cart-icon">
-                        <FontAwesomeIcon icon={faShoppingBag}/>
-                    </div>
-                    <div className="cart-icon">
-                        <FontAwesomeIcon icon={faHeart}/>
-                    </div>
-                    
-                </div>
+                <CartWidget cartCount={0}/>
             </header>
         </>
     )

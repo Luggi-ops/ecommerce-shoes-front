@@ -1,0 +1,33 @@
+.cart{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-icon{
+    background-color: var(--black);
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    display: inline-block;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.shop{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    color: var(--black);
+    text-align: center;
+    line-height: 1.6;
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    font-size: 1.5rem;
+}
