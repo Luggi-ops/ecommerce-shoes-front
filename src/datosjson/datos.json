@@ -10,7 +10,7 @@
         "img": "https://i.ibb.co/X7zWtdL/usama-nike.jpg",
         "color": "#b3e140",
         "theme": "#b3e140",
-        "march": "nike"
+        "category": "nike"
     },
 
     {
@@ -24,7 +24,7 @@
         "img": "https://i.ibb.co/xGGjnnt/usama-akram-s-g-YAb-QTo-Xk-unsplash.jpg",
         "color": "#3d3e40",
         "theme": "#84bfe1",
-        "march": "nike"
+        "category": "nike"
     },
 
     {
@@ -38,7 +38,7 @@
         "img": "https://i.ibb.co/xCbFrsq/ryan-nike.jpg",
         "color": "#fce1e6",
         "theme": "#fce1e6",
-        "march": "nike"
+        "category": "nike"
     },
 
     {
@@ -52,7 +52,7 @@
         "img": "https://i.ibb.co/nQPdM4L/nike-revolt.jpg",
         "color": "#cc041e",
         "theme": "#cc041e",
-        "march": "nike"
+        "category": "nike"
     },
 
     {
@@ -66,7 +66,7 @@
         "img": "https://i.ibb.co/F33rQcR/nike-pink.jpg",
         "color": "#1f2022",
         "theme": "#edbeea",
-        "march": "nike"
+        "category": "nike"
     },
 
     {
@@ -80,7 +80,7 @@
         "img": "https://i.ibb.co/RYJw1m8/mnz-vans.jpg",
         "color": "#c4b08f",
         "theme": "#353743",
-        "march": "vans"
+        "category": "vans"
     },
 
     {
@@ -94,7 +94,7 @@
         "img": "https://i.ibb.co/fQ0ySn3/maksim-nike.jpg",
         "color": "#93582e",
         "theme": "#e39b37",
-        "march": "nike"
+        "category": "nike"
     },
 
     {
@@ -108,7 +108,7 @@
         "img": "https://i.ibb.co/ZJT499P/lins-nike.jpg",
         "color": "#e48b53",
         "theme": "#d6d5d1",
-        "march": "nike"
+        "category": "nike"
     },
 
     {
@@ -122,7 +122,7 @@
         "img": "https://i.ibb.co/3hm94d9/kristian-egelund-v-Jg-JLz-Wm-XDA-unsplash.jpg",
         "color": "#01b077",
         "theme": "#01b077",
-        "march": "vans"
+        "category": "vans"
     }
 
 ]
