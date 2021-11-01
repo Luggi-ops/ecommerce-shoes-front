@@ -20,7 +20,6 @@
 
 .nav{
     list-style: none;
-    width: 60%;
     justify-content: center;
     display: none;
 }
@@ -33,4 +32,26 @@
 
 .nav-link{
     margin-right: 5rem;
+}
+
+.category{
+    position: relative;
+    cursor: pointer;
+}
+
+.submenu{
+    display: none;
+    list-style: none;
+    background-color: var(--black);
+    position: absolute;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.category:hover > .submenu{
+    display: block;
+}
+
+.submenu .nav-link:hover{
+    color: var(--branding);
 }

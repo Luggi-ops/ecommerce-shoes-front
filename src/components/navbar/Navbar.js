@@ -9,11 +9,17 @@ const Navbar = () => {
             <header className="header">
                 <Link to="/" className="header-logo">Shoes</Link>
 
-                <nav className="nav">
-                    <Link to="/" className="nav-link">Home</Link>
-                    <Link to="/catalog" className="nav-link">Catalog</Link>
-                    <Link to="/contact" className="nav-link">Contact</Link>
-                    <Link to="/reviews" className="nav-link">Reviews</Link>
+                <nav>
+                    <ul className="nav">
+                        <li><Link to="/" className="nav-link">Home</Link></li>
+                        <li className="category">
+                            <p className="nav-link">Categories</p>
+                            <ul className="submenu">
+                                <li><Link to="/product/nike" className="nav-link">Nike</Link></li>
+                                <li><Link to="/product/vans" className="nav-link">Vans</Link></li>
+                            </ul>
+                        </li>
+                    </ul> 
                 </nav>
 
                 <CartWidget cartCount={0}/>

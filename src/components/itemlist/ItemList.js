@@ -4,14 +4,17 @@ import datajson from '../../datosjson/datos.json';
 import Item from '../item/Item';
 import { useParams } from 'react-router-dom';
 
-const ItemList = ({match}) => {
+const ItemList = () => {
 
+    const {category} = useParams();
     const [data, setData] = useState([]);
-    const [category, setCategory] = useState(useParams().category);
+    const [categoryName, setCategory] = useState(category);
+
+    console.log(category);
 
     useEffect(()=>{ 
         setTimeout(()=>{
-            if(category == undefined){
+            if(categoryName == undefined){
                 setData(datajson);
             }else{
                 setData(datajson.filter(data => data.category == category));
