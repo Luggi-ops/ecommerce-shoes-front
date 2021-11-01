@@ -19,13 +19,18 @@
 }
 
 .nav{
+    list-style: none;
     width: 60%;
-    display: flex;
     justify-content: center;
+    display: none;
+}
+
+@media screen and (min-width: 720px){
+    .nav{
+        display: flex;
+    }
 }
 
 .nav-link{
     margin-right: 5rem;
 }
-
-

@@ -9,7 +9,7 @@
 }
 
 .hero h1{
-    font-size: 15rem;
+    font-size: 4rem;
     text-transform: uppercase;
     font-weight: bold;
     color: var(--white);
@@ -22,6 +22,19 @@
     line-height: 50vh;
     z-index: -1;
 }
+
+@media screen and (min-width: 720px){
+    .hero h1{
+        font-size: 10rem;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .hero h1{
+        font-size: 15rem;
+    }
+}
+
 
 .hero h1::selection{
     background-color: var(--white);
