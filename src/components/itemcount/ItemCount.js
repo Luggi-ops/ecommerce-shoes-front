@@ -9,11 +9,23 @@ const ItemCount = ({data}) => {
     const [stock, setStock] = useState(data.stock)
 
     const handleDecrement = () =>{
-        counterItem>0 ? setCounterItem(counterItem-1) : setCounterItem(counterItem);
+        if(counterItem > 0){
+            setCounterItem(counterItem-1);
+            setStock(stock+1);
+        } else {
+            setCounterItem(counterItem);
+            setStock(stock);
+        }
     }
 
     const handleIncrement = () =>{
-        counterItem < stock? setCounterItem(counterItem+1) : setCounterItem(counterItem);
+        if(stock > 0){
+            setCounterItem(counterItem+1);
+            setStock(stock-1);
+        } else{
+            setCounterItem(counterItem);
+            setStock(stock);
+        } 
     }
 
     return (
