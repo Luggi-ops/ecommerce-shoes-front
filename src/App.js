@@ -21,6 +21,10 @@ function App() {
           <Route path="/product/:category/:name"> 
             <ItemDetailContainer />
           </Route>
+
+          <Route path="/product/:category"> 
+            <ItemList />
+          </Route>
         </Switch> 
       </>
     </Router>

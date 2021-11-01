@@ -60,9 +60,11 @@ const ItemDetailContainer = () => {
                             <div>
                                 <p>{data.detail}</p>
                             </div>
-                            <div>
-                                <ItemCount data={data}/>
-                                <AddToCart />
+                            <div className="itemDetail-btn">
+                                <div className="itemDetail-btnCount">
+                                    <ItemCount data={data}/>
+                                </div>
+                                <AddToCart className="itemDetail-btnCart"/>
                             </div>
                         </div>
                     </section>

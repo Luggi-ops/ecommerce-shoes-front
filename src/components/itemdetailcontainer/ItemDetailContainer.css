@@ -4,37 +4,64 @@
 }
 
 .itemDetail{
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
     background-color: var(--white);
-    max-height: 65rem;
+    max-height: auto;
     border-radius: 2rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.75);
+    flex-direction: column;
+}
+
+@media screen and (min-width: 720px){
+    .itemDetail{
+        width: 80%;
+        flex-direction: row;
+        max-height: 70rem;
+    }
 }
 
 .itemDetail-img{
-    width: 50%;
+    width: 100%;
+}
+
+@media screen and (min-width: 720px){
+    .itemDetail-img{
+        width: 50%;
+    }
 }
 
 .itemDetail-img img{
     height: 100%;
-    height: 66rem;
+    height: 40rem;
     object-fit: cover;
     object-position: center;
 }
 
+@media screen and (min-width: 720px){
+    .itemDetail-img img{
+        height: 71rem;
+    }
+}
+
 .itemDetail-content{
-    width: 50%;
+    width: 100%;
     height: 80%;
     padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     gap: 2rem;
+}
+
+@media screen and (min-width: 720px){
+    .itemDetail-content{
+        width: 50%;
+    }
 }
 
 .itemDetail-title h2{
@@ -69,4 +96,22 @@
 .itemDetail-talles li{
     padding: 1rem;
     border: 1px solid var(--black);
+}
+
+.itemDetail-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 720px){
+    .itemDetail-btn{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+}
+
+.itemDetail-btnCount{
+    width: 80%;
 }
