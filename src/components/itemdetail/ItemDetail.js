@@ -14,7 +14,7 @@ const ItemDetail = () => {
     const [name, setName] = useState(useParams().name);
     const [data, setData] = useState({});
     const [addToCart, setAddToCart] = useState(false);
-    const [items, setItems] = useContext(CartContext);
+    const [items, setItems, removeItem] = useContext(CartContext);
     
     useEffect(()=>{
         setTimeout(() => {
@@ -31,6 +31,7 @@ const ItemDetail = () => {
 
     const rmToCart = () =>{
         setAddToCart(false);
+        removeItem(data.id);
     }
 
     return (
