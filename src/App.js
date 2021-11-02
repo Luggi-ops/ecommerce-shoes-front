@@ -5,13 +5,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import ItemList from './components/itemlist/ItemList';
 import Hero from './components/hero/Hero';
-import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailContainer';
+import ItemDetail from './components/itemdetail/ItemDetail';
 
 function App() {
   return (
     <Router>
       <>
-        <Navbar />
+        <Navbar/>
         <Switch>
           <Route path="/" exact> 
             <Hero />
@@ -19,7 +19,7 @@ function App() {
           </Route>
 
           <Route path="/product/:category/:name"> 
-            <ItemDetailContainer />
+            <ItemDetail/>
           </Route>
 
           <Route path="/product/:category"> 

@@ -1,16 +1,18 @@
 import React, {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import datajson from '../../datosjson/datos.json';
 import AddToCart from '../addtocart/AddToCart';
 import ItemCount from '../itemcount/ItemCount';
-import './ItemDetailContainer.css';
+import './ItemDetail.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar} from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
-const ItemDetailContainer = () => {
+const ItemDetail = () => {
     
     const [name, setName] = useState(useParams().name);
     const [data, setData] = useState({});
+    const [addToCart, setAddToCart] = useState(false);
     
     useEffect(()=>{
         setTimeout(() => {
@@ -18,7 +20,13 @@ const ItemDetailContainer = () => {
         }, 2000)
     }, [])
 
-    console.log(typeof data.review)
+    const handleAddToCart = () => {
+        setAddToCart(true);
+    }
+
+    const rmToCart = () =>{
+        setAddToCart(false);
+    }
 
     return (
         <div className="itemDetailContainer">
@@ -60,11 +68,27 @@ const ItemDetailContainer = () => {
                             <div>
                                 <p>{data.detail}</p>
                             </div>
-                            <div className="itemDetail-btn">
-                                <div className="itemDetail-btnCount">
-                                    <ItemCount data={data}/>
+                            
+                            {
+                                addToCart ?
+
+                                <FontAwesomeIcon icon={faTrashAlt} className="icon-trash" onClick={rmToCart}/>
+
+                                :
+
+                                <div className="itemDetail-btn">
+                                    <div className="itemDetail-btnCount">
+                                        <ItemCount data={data} addsCount={1}/>
+                                    </div>
+                                    <AddToCart className="itemDetail-btnCart" handleAddToCart={handleAddToCart}/>
                                 </div>
-                                <AddToCart className="itemDetail-btnCart"/>
+                            }
+
+                            <div>
+                                {
+                                    addToCart ? <Link to="/cart" className="goToCart">Go to cart.</Link> : null
+                                }
+                                
                             </div>
                         </div>
                     </section>
@@ -75,4 +99,4 @@ const ItemDetailContainer = () => {
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetail
