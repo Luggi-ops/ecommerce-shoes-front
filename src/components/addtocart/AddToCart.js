@@ -6,9 +6,9 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 import './AddToCart.css';
 
-const AddToCart = () => {
+const AddToCart = ({handleAddToCart}) => {
     return (
-        <div className="addToCart">
+        <div className="addToCart" onClick={handleAddToCart}>
             <FontAwesomeIcon icon={faShoppingCart} className="add__icon"/>
             <p>Agregar al carrito</p>
         </div>

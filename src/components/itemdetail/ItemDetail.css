@@ -108,10 +108,39 @@
     .itemDetail-btn{
         display: flex;
         flex-direction: row;
-        align-items: baseline;
+        align-items: center;
     }
 }
 
 .itemDetail-btnCount{
     width: 80%;
+}
+
+/*go to cart btn*/
+.goToCart{
+    text-decoration: none;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+}
+
+.icon-trash{
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all .5s;
+    animation-name: trash-in;
+    animation-duration: .1s;
+    animation-timing-function: ease-in-out;
+    color: var(--branding);
+    
+}
+
+@keyframes trash-in{
+    0%{
+        clip-path: circle(0% at 50% 50%);
+    }
+    100%{
+        clip-path: circle(50% at 50% 50%);
+    }
 }
