@@ -6,6 +6,7 @@ import Navbar from './components/navbar/Navbar';
 import ItemList from './components/itemlist/ItemList';
 import Hero from './components/hero/Hero';
 import ItemDetail from './components/itemdetail/ItemDetail';
+import Cart from './components/cart/Cart';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
 
           <Route path="/product/:category"> 
             <ItemList />
+          </Route>
+
+          <Route path="/cart"> 
+            <Cart />
           </Route>
         </Switch> 
       </>
