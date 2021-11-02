@@ -65,7 +65,7 @@
 }
 
 .itemDetail-title h2{
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: bold;
 }
 
@@ -132,7 +132,7 @@
     animation-name: trash-in;
     animation-duration: .1s;
     animation-timing-function: ease-in-out;
-    color: var(--branding);
+    color: #fd999c;
     
 }
 

@@ -13,6 +13,10 @@ export const CartProvider = ({children}) => {
         return items.includes(item);
     }
 
+    const clearItems = () =>{
+        setItems([])
+    }
+
     return(
         <CartContext.Provider value={[items, setItems, removeItem, itemInCart]}> 
             {children}
