@@ -22,7 +22,7 @@ const Navbar = () => {
                     </ul> 
                 </nav>
 
-                <CartWidget cartCount={0}/>
+                <CartWidget />
             </header>
         </>
     )

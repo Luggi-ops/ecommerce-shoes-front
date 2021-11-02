@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import { CartContext } from '../cartcontext/CartContext';
 import { useParams, Link } from 'react-router-dom';
 import datajson from '../../datosjson/datos.json';
 import AddToCart from '../addtocart/AddToCart';
@@ -13,6 +14,7 @@ const ItemDetail = () => {
     const [name, setName] = useState(useParams().name);
     const [data, setData] = useState({});
     const [addToCart, setAddToCart] = useState(false);
+    const [items, setItems] = useContext(CartContext);
     
     useEffect(()=>{
         setTimeout(() => {
@@ -20,8 +22,11 @@ const ItemDetail = () => {
         }, 2000)
     }, [])
 
+    console.log(data);
+
     const handleAddToCart = () => {
         setAddToCart(true);
+        setItems([...items, data]);
     }
 
     const rmToCart = () =>{

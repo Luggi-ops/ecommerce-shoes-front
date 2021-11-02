@@ -8,31 +8,36 @@ import Hero from './components/hero/Hero';
 import ItemDetail from './components/itemdetail/ItemDetail';
 import Cart from './components/cart/Cart';
 
+//context
+import {CartProvider} from './components/cartcontext/CartContext';
+
 function App() {
   return (
-    <Router>
-      <>
-        <Navbar/>
-        <Switch>
-          <Route path="/" exact> 
-            <Hero />
-            <ItemList />
-          </Route>
+    <CartProvider>
+      <Router>
+        <>
+          <Navbar/>
+          <Switch>
+            <Route path="/" exact> 
+              <Hero />
+              <ItemList />
+            </Route>
 
-          <Route path="/product/:category/:name"> 
-            <ItemDetail/>
-          </Route>
+            <Route path="/product/:category/:name"> 
+              <ItemDetail/>
+            </Route>
 
-          <Route path="/product/:category"> 
-            <ItemList />
-          </Route>
+            <Route path="/product/:category"> 
+              <ItemList />
+            </Route>
 
-          <Route path="/cart"> 
-            <Cart />
-          </Route>
-        </Switch> 
-      </>
-    </Router>
+            <Route path="/cart"> 
+              <Cart />
+            </Route>
+          </Switch> 
+        </>
+      </Router>
+    </CartProvider>
   );
 }
 
