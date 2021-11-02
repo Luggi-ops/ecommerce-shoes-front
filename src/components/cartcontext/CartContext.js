@@ -9,8 +9,12 @@ export const CartProvider = ({children}) => {
         setItems(items.filter(item => item.id != itemId))
     }
 
+    const itemInCart = (item) =>{
+        return items.includes(item);
+    }
+
     return(
-        <CartContext.Provider value={[items, setItems, removeItem]}> 
+        <CartContext.Provider value={[items, setItems, removeItem, itemInCart]}> 
             {children}
         </CartContext.Provider>
     )

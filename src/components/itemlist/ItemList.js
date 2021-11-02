@@ -10,8 +10,6 @@ const ItemList = () => {
     const [data, setData] = useState([]);
     const [categoryName, setCategory] = useState(category);
 
-    console.log(category);
-
     useEffect(()=>{ 
         setTimeout(()=>{
             if(categoryName == undefined){

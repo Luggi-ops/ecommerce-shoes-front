@@ -10,27 +10,23 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 const ItemDetail = () => {
-    
-    const [name, setName] = useState(useParams().name);
+    const [items, setItems, removeItem, itemInCart] = useContext(CartContext);
     const [data, setData] = useState({});
-    const [addToCart, setAddToCart] = useState(false);
-    const [items, setItems, removeItem] = useContext(CartContext);
+    const name = useParams().name;
+    
     
     useEffect(()=>{
         setTimeout(() => {
             setData(datajson.filter(data => data.name.toLowerCase().replace(/ /g,"-") === name)[0]);
         }, 2000)
+
     }, [])
 
-    console.log(data);
-
     const handleAddToCart = () => {
-        setAddToCart(true);
         setItems([...items, data]);
     }
 
     const rmToCart = () =>{
-        setAddToCart(false);
         removeItem(data.id);
     }
 
@@ -76,7 +72,7 @@ const ItemDetail = () => {
                             </div>
                             
                             {
-                                addToCart ?
+                                itemInCart(data) ?
 
                                 <FontAwesomeIcon icon={faTrashAlt} className="icon-trash" onClick={rmToCart}/>
 
@@ -92,7 +88,7 @@ const ItemDetail = () => {
 
                             <div>
                                 {
-                                    addToCart ? <Link to="/cart" className="goToCart">Go to cart.</Link> : null
+                                    itemInCart(data) ? <Link to="/cart" className="goToCart">Go to cart.</Link> : null
                                 }
                                 
                             </div>
