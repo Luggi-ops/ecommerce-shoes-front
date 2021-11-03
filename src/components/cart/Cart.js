@@ -45,10 +45,10 @@ const Cart = () => {
                                 <p>$ {item.price}</p>
                             </div>
                             <div className="cart-item-count">
-                                <p>1</p>
+                                <p>{item.count}</p>
                             </div>
                             <div className="cart-item-price">
-                                <p>$ {item.price}</p>
+                                <p>$ {item.price * item.count}</p>
                             </div>
                             <div className="cart-item-trash" onClick={rmToCart} data-id={item.id}>
                              <FontAwesomeIcon icon={faTrashAlt} className="icon-trash" />

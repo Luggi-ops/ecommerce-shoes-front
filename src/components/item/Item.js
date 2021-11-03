@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import './Item.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +8,7 @@ import ItemCount from '../itemcount/ItemCount';
 import AddToCart from '../addtocart/AddToCart';
 
 const Item = ({data}) => {
+    const [count, setCount] = useState(1);
 
     return (
         <>
@@ -30,7 +31,7 @@ const Item = ({data}) => {
                     <div>
                         <FontAwesomeIcon icon={faHeart} className="icon-fav"/>
                     </div>
-                    <ItemCount data={data}/>
+                    <ItemCount data={data} count={count} setCount={setCount}/>
                     <AddToCart />
                 </div>
             </div>

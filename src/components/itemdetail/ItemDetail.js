@@ -12,23 +12,42 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 const ItemDetail = () => {
     const [items, setItems, removeItem, itemInCart] = useContext(CartContext);
     const [data, setData] = useState({});
+    const [item, setItem] = useState({});
+    const [count, setCount] = useState(1);
     const name = useParams().name;
     
     
     useEffect(()=>{
         setTimeout(() => {
             setData(datajson.filter(data => data.name.toLowerCase().replace(/ /g,"-") === name)[0]);
+            
         }, 2000)
 
-    }, [])
+        setItem(getDataProduct(data))
+
+    }, [data])
 
     const handleAddToCart = () => {
+        data.count = count;
         setItems([...items, data]);
     }
 
     const rmToCart = () =>{
         removeItem(data.id);
     }
+
+    const getDataProduct = (data) =>{
+        const productData = {
+            id: data.id,
+            name: data.name,
+            img: data.img,
+            price: data.price,
+            count: count
+        }
+
+        return productData;
+    }
+
 
     return (
         <div className="itemDetailContainer">
@@ -80,7 +99,7 @@ const ItemDetail = () => {
 
                                 <div className="itemDetail-btn">
                                     <div className="itemDetail-btnCount">
-                                        <ItemCount data={data} addsCount={1}/>
+                                        <ItemCount data={data} count={count} setCount={setCount}/>
                                     </div>
                                     <AddToCart className="itemDetail-btnCart" handleAddToCart={handleAddToCart}/>
                                 </div>

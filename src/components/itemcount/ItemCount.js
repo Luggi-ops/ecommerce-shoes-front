@@ -4,26 +4,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
 
-const ItemCount = ({data, addsCount = 0}) => {
-    const [counterItem, setCounterItem] = useState(addsCount);
-    const [stock, setStock] = useState(data.stock-addsCount);
+const ItemCount = ({data, count, setCount}) => {
+    const [stock, setStock] = useState(data.stock-count);
 
     const handleDecrement = () =>{
-        if(counterItem > 0){
-            setCounterItem(counterItem-1);
+        if(count > 0){
+            setCount(count-1);
             setStock(stock+1);
         } else {
-            setCounterItem(counterItem);
+            setCount(count);
             setStock(stock);
         }
     }
 
     const handleIncrement = () =>{
         if(stock > 0){
-            setCounterItem(counterItem+1);
+            setCount(count+1);
             setStock(stock-1);
         } else{
-            setCounterItem(counterItem);
+            setCount(count);
             setStock(stock);
         } 
     }
@@ -36,7 +35,7 @@ const ItemCount = ({data, addsCount = 0}) => {
                 <div className="itemCount__icon">
                     <FontAwesomeIcon icon={faMinus} onClick={handleDecrement}/>
                 </div>
-                <p className="itemCount__value">{counterItem}</p>
+                <p className="itemCount__value">{count}</p>
 
                 <div className="itemCount__icon">
                     <FontAwesomeIcon icon={faPlus} onClick={handleIncrement}/>
