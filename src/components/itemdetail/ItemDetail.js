@@ -10,12 +10,11 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 const ItemDetail = () => {
-    const [items, setItems, removeItem, itemInCart] = useContext(CartContext);
+    const [items, setItems, removeItem, itemInCart, setCountItems, countItems] = useContext(CartContext);
     const [data, setData] = useState({});
     const [item, setItem] = useState({});
     const [count, setCount] = useState(1);
     const name = useParams().name;
-    
     
     useEffect(()=>{
         setTimeout(() => {
@@ -28,11 +27,13 @@ const ItemDetail = () => {
     }, [data])
 
     const handleAddToCart = () => {
+        setCountItems(countItems+count)
         data.count = count;
         setItems([...items, data]);
     }
 
     const rmToCart = () =>{
+        setCountItems(countItems-count)
         removeItem(data.id);
     }
 

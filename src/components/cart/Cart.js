@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
-    const [items, setItems, removeItem] = useContext(CartContext);
+    const [items, setItems, removeItem, setCountItems, countItems] = useContext(CartContext);
 
     const rmToCart = (e) =>{
         const id = e.target.closest('.cart-item-trash').getAttribute('data-id');
