@@ -11,7 +11,8 @@ const Cart = () => {
     const [items, setItems, removeItem] = useContext(CartContext);
 
     const rmToCart = (e) =>{
-        console.log(e)
+        const id = e.target.closest('.cart-item-trash').getAttribute('data-id');
+        removeItem(id);
     }
 
     return (
@@ -35,7 +36,7 @@ const Cart = () => {
                 </div>
                 {
                     items.map(item => (
-                        <div className="cart-item">
+                        <div className="cart-item" key={item.id}>
                             <div className="cart-item-img">
                                 <img src={item.img} alt="" />
                             </div>
@@ -49,8 +50,8 @@ const Cart = () => {
                             <div className="cart-item-price">
                                 <p>$ {item.price}</p>
                             </div>
-                            <div className="cart-item-trash">
-                             <FontAwesomeIcon icon={faTrashAlt} className="icon-trash" onClick={rmToCart}/>
+                            <div className="cart-item-trash" onClick={rmToCart} data-id={item.id}>
+                             <FontAwesomeIcon icon={faTrashAlt} className="icon-trash" />
                             </div>
                         </div>
                     ))
