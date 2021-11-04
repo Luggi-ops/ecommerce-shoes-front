@@ -1,13 +1,20 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { CartContext } from '../cartcontext/CartContext';
 import { useParams, Link } from 'react-router-dom';
-import datajson from '../../datosjson/datos.json';
 import AddToCart from '../addtocart/AddToCart';
 import ItemCount from '../itemcount/ItemCount';
+import {formatNumber} from '../../helpers/formatNumber';
+//css
 import './ItemDetail.css';
+
+//iconos
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
+//firestore
+import { db } from '../../firebaseconfig';
+import { getDocs, collection } from '@firebase/firestore';
 
 const ItemDetail = () => {
     const [items, setItems, removeItem, itemInCart, setCountItems, countItems] = useContext(CartContext);
@@ -17,14 +24,21 @@ const ItemDetail = () => {
     const name = useParams().name;
     
     useEffect(()=>{
-        setTimeout(() => {
-            setData(datajson.filter(data => data.name.toLowerCase().replace(/ /g,"-") === name)[0]);
-            
-        }, 2000)
+        const docs = []
+        const getDataFirestore = async () => {
+            const items = await getDocs(collection(db, 'Products'));
+            items.forEach(doc => {
+                docs.push({...doc.data(), id: doc.id})
+            })
+
+            setData(docs.filter(data => data.name.toLowerCase().replace(/ /g,"-") === name)[0])
+        }
+
+        getDataFirestore();
 
         setItem(getDataProduct(data))
 
-    }, [data])
+    }, [])
 
     const handleAddToCart = () => {
         setCountItems(countItems+count)
@@ -71,7 +85,7 @@ const ItemDetail = () => {
                                 }
                             </div>
                             <div className="itemDetail-price">
-                                <p className="price">${data.price}</p>
+                                <p className="price">${formatNumber(data.price)}</p>
                             </div>
                             <div className="itemDetail-color_container">
                                 <p>Color: </p><span className="itemDetail-color" style={{backgroundColor: `${data.color}`}}></span>

@@ -5,10 +5,10 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import './Cart.css';
 import { Link } from 'react-router-dom';
-
+import {formatNumber} from '../../helpers/formatNumber';
 
 const Cart = () => {
-    const [items, setItems, removeItem, setCountItems, countItems] = useContext(CartContext);
+    const [items, setItems, removeItem, itemInCart, setCountItems, countItems, getTotal] = useContext(CartContext);
 
     const rmToCart = (e) =>{
         const id = e.target.closest('.cart-item-trash').getAttribute('data-id');
@@ -42,13 +42,13 @@ const Cart = () => {
                             </div>
                             <div className="cart-item-name">
                                 <p>{item.name}</p>
-                                <p>$ {item.price}</p>
+                                <p>$ {formatNumber(item.price)}</p>
                             </div>
                             <div className="cart-item-count">
                                 <p>{item.count}</p>
                             </div>
                             <div className="cart-item-price">
-                                <p>$ {item.price * item.count}</p>
+                                <p>$ {formatNumber(item.price * item.count)}</p>
                             </div>
                             <div className="cart-item-trash" onClick={rmToCart} data-id={item.id}>
                              <FontAwesomeIcon icon={faTrashAlt} className="icon-trash" />
@@ -67,7 +67,7 @@ const Cart = () => {
                         
                     </div>
                     <div className="cart-item-footer">
-                        <h4>Total</h4>
+                        <h4>Total: $ {formatNumber(getTotal())}</h4>
                     </div>
                     <div className="cart-item-footer">
                         <Link to="/" className="btn">

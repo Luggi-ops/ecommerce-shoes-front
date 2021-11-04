@@ -20,9 +20,20 @@ export const CartProvider = ({children}) => {
         setItems([])
     }
 
+    const getTotal = () =>{
+        let total = 0;
+        if(items.length > 0){
+            
+            items.forEach(item => {
+                total += item.price*item.count;
+            })
+        } 
+        return total;
+    }
+
 
     return(
-        <CartContext.Provider value={[items, setItems, removeItem, itemInCart, setCountItems, countItems]}> 
+        <CartContext.Provider value={[items, setItems, removeItem, itemInCart, setCountItems, countItems, getTotal]}> 
             {children}
         </CartContext.Provider>
     )

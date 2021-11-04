@@ -37,17 +37,16 @@
     position: absolute;
     background-color: var(--white);
     max-width: 60rem;
-    height: 40rem;
+    height: 25rem;
     left: -16rem;
     top: 5rem;
-    height: max-content;
     font-size: 1.5rem;
     z-index: 1000;
     border-radius: 2rem;
     box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
     -webkit-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 @media screen and (min-width: 720px){
@@ -74,4 +73,15 @@
 
 .cart-widget .cart-item-trash .icon-trash{
     width: 1.5rem;
+}
+.cart-item-total{
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.cart-item-total::before{
+    content: 'Total';
+    color: #999999;
+    position: absolute;
+    left: -6rem;
 }
