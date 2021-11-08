@@ -94,7 +94,7 @@ const Cart = () => {
                     </div>
                     <div className="cart-item-footer">
                         {
-                            items.lenght > 0?
+                            items.length > 0?
 
                             <div className="btn" onClick={handleOrder}>
                                 <FontAwesomeIcon icon={faCreditCard} className="faCreditCard"/>
