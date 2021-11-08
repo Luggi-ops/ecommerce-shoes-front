@@ -1,7 +1,7 @@
 
 .cart-container{
     background-color: var(--white);
-    width: 80%;
+    width: 100%;
     margin: 4rem auto;
     border-radius: 3rem;
     padding: 2rem 1rem;
@@ -24,6 +24,9 @@
 }
 
 @media screen and (min-width: 720px){
+    .cart-container{
+        width: 80%;
+    }
     .cart-container h4{
         font-size: 2rem;
     }
