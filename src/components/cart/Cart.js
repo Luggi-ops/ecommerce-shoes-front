@@ -1,22 +1,45 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../cartcontext/CartContext';
+import './Cart.css';
+
+//fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
-import './Cart.css';
-import { Link } from 'react-router-dom';
+
 import {formatNumber} from '../../helpers/formatNumber';
+import {db} from '../../firebaseconfig';
+import { collection, getDocs, addDoc } from '@firebase/firestore';
 
 const Cart = () => {
-    const [items, setItems, removeItem, itemInCart, setCountItems, countItems, getTotal] = useContext(CartContext);
+    const [order, setOrder] = useState(false);
+    const [orderId, setOrderId] = useState('')
+    const [items, setItems, removeItem, itemInCart, setCountItems, countItems, getTotal, clearItems] = useContext(CartContext);
 
     const rmToCart = (e) =>{
         const id = e.target.closest('.cart-item-trash').getAttribute('data-id');
         removeItem(id);
     }
 
+    const handleOrder = async () =>{
+        const docOrder = await addDoc(collection(db, 'Orders'), {items});
+        setOrder(true);
+        setOrderId(docOrder.id);
+        clearItems();
+    }
+
     return (
         <>
+            {
+
+            order?
+            <div className="cart-container order-container">
+                <img src="/img/order-icon.gif" className="order-icon"/>
+                <h2>Muchas gracias por tu compra!</h2>
+                <p>Comprobante: <span>{orderId}</span></p>
+            </div>
+            :
             <section className="cart-container">
                 <div className="cart-header">
                     <div className="cart-item-header">
@@ -70,13 +93,14 @@ const Cart = () => {
                         <h4>Total: $ {formatNumber(getTotal())}</h4>
                     </div>
                     <div className="cart-item-footer">
-                        <Link to="/" className="btn">
+                        <div className="btn" onClick={handleOrder}>
                             <FontAwesomeIcon icon={faCreditCard} className="faCreditCard"/>
                             Order
-                        </Link>
+                        </div>
                     </div>
                 </div>
             </section>
+            }
         </>
     )
 }

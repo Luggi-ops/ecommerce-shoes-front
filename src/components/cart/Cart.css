@@ -78,3 +78,18 @@
 .cart-item-trash{
     position: relative;
 }
+
+
+/*order*/
+
+.order-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40rem;
+}
+
+.order-icon{
+    width: 5rem;
+}
