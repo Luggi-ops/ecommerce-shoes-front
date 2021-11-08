@@ -93,10 +93,17 @@ const Cart = () => {
                         <h4>Total: $ {formatNumber(getTotal())}</h4>
                     </div>
                     <div className="cart-item-footer">
-                        <div className="btn" onClick={handleOrder}>
-                            <FontAwesomeIcon icon={faCreditCard} className="faCreditCard"/>
-                            Order
-                        </div>
+                        {
+                            items.lenght > 0?
+
+                            <div className="btn" onClick={handleOrder}>
+                                <FontAwesomeIcon icon={faCreditCard} className="faCreditCard"/>
+                                Order
+                            </div>
+                            :
+                            null
+                        }
+                        
                     </div>
                 </div>
             </section>
