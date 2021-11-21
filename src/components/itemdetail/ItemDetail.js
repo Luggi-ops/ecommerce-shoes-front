@@ -122,7 +122,7 @@ const ItemDetail = () => {
 
                             <div>
                                 {
-                                    itemInCart(data) ? <Link to="/cart" className="goToCart">Go to cart.</Link> : null
+                                    itemInCart(data) ? <Link to="/carrito" className="goToCart">Finalizar compra.</Link> : null
                                 }
                                 
                             </div>

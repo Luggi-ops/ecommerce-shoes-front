@@ -23,15 +23,15 @@ function App() {
               <ItemList />
             </Route>
 
-            <Route path="/product/:category/:name"> 
+            <Route path="/producto/:category/:name"> 
               <ItemDetail/>
             </Route>
 
-            <Route path="/product/:category"> 
+            <Route path="/producto/:category"> 
               <ItemList />
             </Route>
 
-            <Route path="/cart"> 
+            <Route path="/carrito"> 
               <Cart />
             </Route>
           </Switch> 

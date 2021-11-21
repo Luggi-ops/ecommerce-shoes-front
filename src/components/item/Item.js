@@ -14,7 +14,7 @@ const Item = ({data}) => {
         <>
             <div className="item-card">
                 <div className="item-card-img">
-                    <Link to={`/product/${data.category}/${data.name.toLowerCase().replace(/ /g,"-")}`}>
+                    <Link to={`/producto/${data.category}/${data.name.toLowerCase().replace(/ /g,"-")}`}>
                         <img src={data.img} alt="" />
                     </Link>
                 </div>

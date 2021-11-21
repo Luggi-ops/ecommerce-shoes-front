@@ -1,0 +1,36 @@
+
+
+
+.form-card-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    align-items: baseline;
+}
+
+.form-data-item{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form-data-item label{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.form-data-item input, .form-data-item select{
+    border: none;
+    border-bottom: 1.5px solid var(--black);
+    outline: none;
+    font-size: 1.6rem;
+    color: #828282;
+    background-color: var(--white);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
