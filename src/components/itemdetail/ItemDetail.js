@@ -19,7 +19,6 @@ import { getDocs, collection } from '@firebase/firestore';
 const ItemDetail = () => {
     const [items, setItems, removeItem, itemInCart, setCountItems, countItems] = useContext(CartContext);
     const [data, setData] = useState({});
-    const [item, setItem] = useState({});
     const [count, setCount] = useState(1);
     const name = useParams().name;
     
@@ -35,9 +34,6 @@ const ItemDetail = () => {
         }
 
         getDataFirestore();
-
-        setItem(getDataProduct(data))
-
     }, [])
 
     const handleAddToCart = () => {
@@ -51,23 +47,10 @@ const ItemDetail = () => {
         removeItem(data.id);
     }
 
-    const getDataProduct = (data) =>{
-        const productData = {
-            id: data.id,
-            name: data.name,
-            img: data.img,
-            price: data.price,
-            count: count
-        }
-
-        return productData;
-    }
-
-
     return (
         <div className="itemDetailContainer">
             {
-                JSON.stringify(data) != '{}'?
+                JSON.stringify(data) !== '{}'?
                     <section className="itemDetail">
                         <div className="itemDetail-img">
                             <img src={data.img} alt={data.name}/>

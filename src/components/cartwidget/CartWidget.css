@@ -49,6 +49,16 @@
     overflow-y: scroll;
 }
 
+.cart-widget::-webkit-scrollbar{
+    width: .5rem;
+    background-color: transparent;
+
+}
+
+.cart-widget::-webkit-scrollbar-thumb{
+    background-color: var(--branding);
+}
+
 @media screen and (min-width: 720px){
     .cart-widget{
         left: -45rem;

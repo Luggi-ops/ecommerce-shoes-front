@@ -1,5 +1,4 @@
 import React, {useContext, useState} from 'react';
-import { Link } from 'react-router-dom';
 import { CartContext } from '../cartcontext/CartContext';
 import FormCart from '../formCart/FormCart';
 import FormCardCredit from '../formCardCredit/FormCardCredit';
@@ -8,12 +7,11 @@ import './Cart.css';
 //fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 import {formatNumber} from '../../helpers/formatNumber';
 import {db} from '../../firebaseconfig';
-import { collection, getDocs, addDoc } from '@firebase/firestore';
+import { collection, addDoc } from '@firebase/firestore';
 
 
 const Cart = () => {

@@ -10,7 +10,7 @@ const ItemList = () => {
 
     const {category} = useParams();
     const [data, setData] = useState([]);
-    const [categoryName, setCategory] = useState(category);
+    const categoryName = category;
 
     useEffect(()=>{ 
         const docs = [];
@@ -21,10 +21,10 @@ const ItemList = () => {
             })
             setData(docs)
 
-            if(categoryName == undefined){
+            if(categoryName === undefined){
                 setData(docs)
             } else{
-                setData(docs.filter(data => data.category == category))
+                setData(docs.filter(data => data.category === category))
             }
         }
 

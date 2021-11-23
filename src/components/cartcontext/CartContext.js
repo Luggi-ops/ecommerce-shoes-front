@@ -7,8 +7,8 @@ export const CartProvider = ({children}) => {
     const [countItems, setCountItems] = useState(0);
 
     const removeItem = (itemId) =>{
-        setCountItems(countItems - items.filter(item => item.id == itemId)[0].count);
-        setItems(items.filter(item => item.id != itemId));
+        setCountItems(countItems - items.filter(item => item.id === itemId)[0].count);
+        setItems(items.filter(item => item.id !== itemId));
         
     }
 

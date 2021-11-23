@@ -17,6 +17,7 @@
 .cart-header{
     border-bottom: 1px solid #eeeeee;
     padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .cart-container h4{
@@ -26,6 +27,15 @@
 .cart-list-products{
     height: 35rem;
     overflow-y: scroll;
+}
+
+.cart-list-products::-webkit-scrollbar{
+    width: .5rem;
+    background-color: transparent;
+}
+
+.cart-list-products::-webkit-scrollbar-thumb{
+    background-color: var(--branding);
 }
 
 @media screen and (min-width: 720px){
@@ -43,6 +53,7 @@
     justify-items: center;
     align-items: center;
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .cart-footer{
@@ -120,7 +131,20 @@
 
 .dotPasarela--active{
     color: var(--branding);
+    animation-name: dot;
+    animation-duration: .5s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
 }
+@keyframes dot{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 .dotPasarela--next{
     position: relative;
 }
@@ -129,11 +153,11 @@
     width: 0;
     height: .5rem;
     position: absolute;
-    left: 0;
+    left: 1rem;
     bottom: 50%;
     background-color: var(--branding);
     animation-name: completado;
-    animation-duration: 2s;
+    animation-duration: .5s;
     animation-direction: alternate;
     animation-fill-mode: forwards;
     transform-origin: left;
@@ -146,7 +170,7 @@
     }
 
     100%{
-        width: 7rem;
+        width: 6rem;
     }
 }
 

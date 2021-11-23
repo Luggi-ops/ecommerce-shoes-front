@@ -106,7 +106,6 @@ const FormCart = ({setOrder, order, handlePagar}) => {
                                 name="envio" 
                                 id="envio" 
                                 onChange={handleEnvio}
-                                required
                             />
                         </div>
                     </div>
