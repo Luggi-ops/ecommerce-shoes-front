@@ -32,7 +32,9 @@ const Item = ({data}) => {
                         <FontAwesomeIcon icon={faHeart} className="icon-fav"/>
                     </div>
                     <ItemCount data={data} count={count} setCount={setCount}/>
-                    <AddToCart />
+                    <Link to={`/producto/${data.category}/${data.name.toLowerCase().replace(/ /g,"-")}`} className="btn">
+                        Ver detalle
+                    </Link>
                 </div>
             </div>
         </>
